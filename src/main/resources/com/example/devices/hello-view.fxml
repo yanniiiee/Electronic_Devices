@@ -1,177 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.devices.HelloController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.devices.HelloController">
   <children>
-    <TabPane fx:id="tabPane" prefHeight="306.0" prefWidth="340.0" tabClosingPolicy="UNAVAILABLE">
+    <!-- TabPane for device input -->
+    <TabPane fx:id="tabPane" layoutX="20.0" layoutY="20.0" prefHeight="360.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
-        <Tab fx:id="laptopTab" text="Laptop">
+        <!-- Laptop Tab -->
+        <Tab text="Laptop">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <GridPane layoutX="-6.0" prefHeight="280.0" prefWidth="348.0">
-                  <columnConstraints>
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-                  <children>
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Name">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="namel" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" />
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Price" GridPane.rowIndex="1">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="81.0" text="Weight" GridPane.rowIndex="2">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="124.0" text="RAM" GridPane.rowIndex="3">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="165.0" text="Processor Type" GridPane.rowIndex="4">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="pricel" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <TextField fx:id="weightl" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <TextField fx:id="ram" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <TextField fx:id="processor" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  </children>
-                </GridPane>
-              </children>
-            </AnchorPane>
+            <VBox alignment="TOP_LEFT" spacing="10.0" padding="10.0">
+              <Label text="Laptop Details" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+              <GridPane hgap="10.0" vgap="10.0">
+                <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" />
+                  <ColumnConstraints halignment="LEFT" />
+                </columnConstraints>
+                <children>
+                  <Label text="Name:" />
+                  <TextField fx:id="namel" GridPane.columnIndex="1" />
+                  <Label text="Price:" GridPane.rowIndex="1" />
+                  <TextField fx:id="pricel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Weight:" GridPane.rowIndex="2" />
+                  <TextField fx:id="weightl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="RAM:" GridPane.rowIndex="3" />
+                  <TextField fx:id="ram" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Processor:" GridPane.rowIndex="4" />
+                  <TextField fx:id="processor" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </children>
+              </GridPane>
+            </VBox>
           </content>
         </Tab>
-        <Tab fx:id="smartphoneTab" text="Smartphone">
+
+        <!-- Smartphone Tab -->
+        <Tab text="Smartphone">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <GridPane layoutY="-1.0" prefHeight="280.0" prefWidth="348.0">
-                  <columnConstraints>
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-                  <children>
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Name">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="names" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" />
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Price" GridPane.rowIndex="1">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="81.0" text="Weight" GridPane.rowIndex="2">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="124.0" text="Screen Size" GridPane.rowIndex="3">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="126.0" text="Camera Res" GridPane.rowIndex="4">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="prices" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <TextField fx:id="weights" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <TextField fx:id="screenSize" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <TextField fx:id="cameraRes" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  </children>
-                </GridPane>
-              </children></AnchorPane>
+            <VBox alignment="TOP_LEFT" spacing="10.0" padding="10.0">
+              <Label text="Smartphone Details" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+              <GridPane hgap="10.0" vgap="10.0">
+                <children>
+                  <Label text="Name:" />
+                  <TextField fx:id="names" GridPane.columnIndex="1" />
+                  <Label text="Price:" GridPane.rowIndex="1" />
+                  <TextField fx:id="prices" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Weight:" GridPane.rowIndex="2" />
+                  <TextField fx:id="weights" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Screen Size:" GridPane.rowIndex="3" />
+                  <TextField fx:id="screenSize" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Camera Resolution:" GridPane.rowIndex="4" />
+                  <TextField fx:id="cameraRes" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </children>
+              </GridPane>
+            </VBox>
           </content>
         </Tab>
-        <Tab fx:id="tabletTab" text="Tablet">
+
+        <!-- Tablet Tab -->
+        <Tab text="Tablet">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <GridPane layoutX="-4.0" layoutY="-1.0" prefHeight="226.0" prefWidth="348.0">
-                  <columnConstraints>
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-                  <children>
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Name">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="namet" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" />
-                    <Label prefHeight="45.0" prefWidth="64.0" text="Price" GridPane.rowIndex="1">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="81.0" text="Weight" GridPane.rowIndex="2">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <Label prefHeight="45.0" prefWidth="124.0" text="Buttery Life" GridPane.rowIndex="3">
-                      <font>
-                        <Font size="24.0" />
-                      </font>
-                    </Label>
-                    <TextField fx:id="pricet" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <TextField fx:id="weightt" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <TextField fx:id="batteryLife" prefHeight="50.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  </children>
-                </GridPane>
-                <CheckBox fx:id="hasStylus" layoutX="170.0" layoutY="239.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="34.0">
-                  <font>
-                    <Font size="24.0" />
-                  </font>
-                </CheckBox>
-                <Label alignment="CENTER" layoutX="53.0" layoutY="236.0" prefHeight="41.0" prefWidth="73.0" text="Stylus">
-                  <font>
-                    <Font name="Berlin Sans FB" size="24.0" />
-                  </font>
-                </Label>
-              </children></AnchorPane>
+            <VBox alignment="TOP_LEFT" spacing="10.0" padding="10.0">
+              <Label text="Tablet Details" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+              <GridPane hgap="10.0" vgap="10.0">
+                <children>
+                  <Label text="Name:" />
+                  <TextField fx:id="namet" GridPane.columnIndex="1" />
+                  <Label text="Price:" GridPane.rowIndex="1" />
+                  <TextField fx:id="pricet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Weight:" GridPane.rowIndex="2" />
+                  <TextField fx:id="weightt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Battery Life:" GridPane.rowIndex="3" />
+                  <TextField fx:id="batteryLife" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Has Stylus:" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="hasStylus" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                </children>
+              </GridPane>
+            </VBox>
           </content>
         </Tab>
       </tabs>
     </TabPane>
-    <ListView fx:id="listView" layoutX="346.0" layoutY="7.0" onEditStart="#init" onMouseClicked="#onListClicked" prefHeight="306.0" prefWidth="255.0" />
-    <Button fx:id="add" layoutX="144.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="41.0" prefWidth="79.0" text="Confirm" />
-    <Button layoutX="448.0" layoutY="334.0" mnemonicParsing="false" onAction="#onRemoveClick" prefHeight="33.0" prefWidth="79.0" style="-fx-background-color: RED;" text="Delete" />
+
+    <!-- ListView for displaying devices -->
+    <VBox layoutX="450.0" layoutY="20.0" spacing="10.0">
+      <Label text="Device List" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+      <ListView fx:id="listView" prefHeight="300.0" prefWidth="320.0" />
+    </VBox>
+
+    <!-- Buttons for actions -->
+    <HBox layoutX="300.0" layoutY="420.0" spacing="20.0" alignment="CENTER">
+      <Button fx:id="add" text="Add Device" onAction="#onAddClick" prefHeight="40.0" prefWidth="120.0" />
+      <Button fx:id="remove" text="Remove Device" onAction="#onRemoveClick" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #FF5555; -fx-text-fill: white;" />
+    </HBox>
   </children>
 </AnchorPane>
