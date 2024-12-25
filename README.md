@@ -77,12 +77,6 @@ Open the project in your preferred IDE (e.g., IntelliJ IDEA, Eclipse). If you're
 ### 1. **Smartphone Tab**
 ![Smartphone Tab Screenshot](https://github.com/user-attachments/assets/b4fdb1e7-3205-4831-bb04-ce8eb77120e5)
 
-### 2. **Device Added to ListView**
-![Device in ListView](screenshots/device-added.png)
-
-### 3. **Device Removed from ListView**
-![Device Removed](screenshots/device-removed.png)
-
 ---
 
 ## Code Explanation
